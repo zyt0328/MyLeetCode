@@ -37,3 +37,28 @@ public:
         }     
     }
 };
+
+
+
+//Solve use for loop
+class Solution {
+public:
+    int climbStairs(int n) {
+        if (n == 1){
+            return 1;
+        }
+        if (n == 2){
+            return 2;
+        }
+        int res = 0;
+        int preWay = 2;
+        int prePreWay = 1;
+        for(int i = 3; i <= n; i++){
+            res = preWay + prePreWay;
+            prePreWay = preWay;
+            preWay = res;
+        }
+        return res;    
+        
+    }
+};
